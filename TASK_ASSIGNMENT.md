@@ -15,7 +15,7 @@
 
 ### 🔴 P0 - 核心功能（必须完成）
 
-#### 任务1: 学员管理CRUD页面
+#### [x] 任务1: 学员管理CRUD页面
 **文件**: `src/pages/business/UserManagement.tsx`
 **功能**:
 - 学员列表展示（调用 `api.crud.list('user_info')`）
@@ -32,7 +32,7 @@ POST /api/user_info/update
 POST /api/user_info/delete/{id}
 ```
 
-#### 任务2: 课程管理CRUD页面
+#### [x] 任务2: 课程管理CRUD页面
 **文件**: `src/pages/business/CourseManagement.tsx`
 **功能**:
 - 课程列表展示
@@ -40,7 +40,7 @@ POST /api/user_info/delete/{id}
 - 课程状态切换（上架/下架）
 - 调用 `api.procedure.offlineCourse(courseId)` 下架
 
-#### 任务3: 考试管理页面
+#### [x] 任务3: 考试管理页面
 **文件**: `src/pages/business/ExamManagement.tsx`
 **功能**:
 - 考试列表
@@ -50,7 +50,7 @@ POST /api/user_info/delete/{id}
 
 ### 🟡 P1 - 重要功能（推荐完成）
 
-#### 任务4: 数据可视化大屏
+#### [x] 任务4: 数据可视化大屏
 **文件**: `src/pages/DataVisualization.tsx`
 **依赖**: `npm install echarts`
 **功能**:
@@ -59,7 +59,7 @@ POST /api/user_info/delete/{id}
 - 课程分类柱状图
 - 任务完成率仪表盘
 
-#### 任务5: 培训任务管理
+#### [x] 任务5: 培训任务管理
 **文件**: `src/pages/business/TaskManagement.tsx`
 **功能**:
 - 任务列表
@@ -67,7 +67,7 @@ POST /api/user_info/delete/{id}
 - 任务延期（调用 `api.procedure.updateTaskTime()`）
 - 查看进度视图
 
-#### 任务6: 统计分析报表页
+#### [x] 任务6: 统计分析报表页
 **文件**: `src/pages/business/StatisticsReport.tsx`
 **功能**:
 - 全体学员统计（调用 `api.view.getLearningExamStats()`）
@@ -76,27 +76,27 @@ POST /api/user_info/delete/{id}
 
 ### 🟢 P2 - 增强功能（有时间再做）
 
-#### 任务7: 登录认证页面
+#### [x] 任务7: 登录认证页面
 **文件**: `src/pages/Login.tsx`, `src/hooks/useAuth.ts`
 **功能**:
 - 登录表单
 - Token管理（localStorage）
 - 路由守卫
 
-#### 任务8: 数据导入导出
+#### [x] 任务8: 数据导入导出
 **文件**: `src/utils/export.ts`, `src/utils/import.ts`
 **依赖**: `npm install xlsx`
 **功能**:
 - 导出Excel/CSV
 - 导入数据预览
 
-#### 任务9: API Mock系统
+#### [x] 任务9: API Mock系统
 **文件**: `src/services/mockApi.ts`
 **功能**:
 - 模拟后端返回数据
 - 方便前端独立开发和测试
 
-#### 任务10: 响应式适配
+#### [x] 任务10: 响应式适配
 **功能**:
 - 适配平板设备
 - 移动端基础适配

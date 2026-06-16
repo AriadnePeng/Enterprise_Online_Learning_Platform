@@ -1,5 +1,19 @@
 # React + TypeScript + Vite
 
+## Run the complete project
+
+```bash
+npm run dev:full
+```
+
+- Frontend: `http://127.0.0.1:3000`
+- Backend: `http://127.0.0.1:8080`
+- Health check: `http://127.0.0.1:8080/api/health`
+- Demo login: `admin / 123456`
+
+The backend is a zero-dependency Node.js REST service with a persistent local
+JSON database. See `server/README.md` for API and configuration details.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

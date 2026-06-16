@@ -71,6 +71,16 @@
   body {
     @apply bg-background text-foreground;
     font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
   }
 }
 
@@ -128,10 +138,25 @@
   }
 
   .db-page-title {
-    @apply text-2xl font-bold text-slate-900;
+    @apply text-2xl font-bold text-slate-900 tracking-tight;
   }
 
   .db-page-desc {
     @apply text-sm text-slate-500 mt-1;
+  }
+}
+
+@media (max-width: 640px) {
+  .db-card,
+  .db-stat-card {
+    border-radius: 0.75rem;
+  }
+
+  .db-page-title {
+    font-size: 1.375rem;
+  }
+
+  .db-code-block {
+    font-size: 0.7rem;
   }
 }
