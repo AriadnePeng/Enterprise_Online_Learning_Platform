@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.learning.mapper.ProcedureMapper">
+    <update id="batchAssignTask" parameterType="map" statementType="CALLABLE">
+        {CALL sp_batch_assign_task(
+            #{taskId, mode=IN, jdbcType=VARCHAR},
+            #{taskName, mode=IN, jdbcType=VARCHAR},
+            #{creatorId, mode=IN, jdbcType=VARCHAR},
+            #{targetPosition, mode=IN, jdbcType=VARCHAR},
+            #{deadline, mode=IN, jdbcType=DECIMAL},
+            #{message, mode=OUT, jdbcType=VARCHAR}
+        )}
+    </update>
+
+    <update id="updateTaskTime" parameterType="map" statementType="CALLABLE">
+        {CALL sp_update_task_time(
+            #{taskId, mode=IN, jdbcType=VARCHAR},
+            #{newDeadline, mode=IN, jdbcType=DECIMAL},
+            #{message, mode=OUT, jdbcType=VARCHAR}
+        )}
+    </update>
+
+    <select id="exportAnomalyEmployees" parameterType="map" resultType="map" statementType="CALLABLE">
+        {CALL sp_export_anomaly_employees(
+            #{riskLevel, mode=IN, jdbcType=VARCHAR},
+            #{department, mode=IN, jdbcType=VARCHAR},
+            #{startDate, mode=IN, jdbcType=DATE},
+            #{endDate, mode=IN, jdbcType=DATE}
+        )}
+    </select>
+
+    <select id="archiveMonthlyStats" parameterType="map" resultType="map" statementType="CALLABLE">
+        {CALL sp_archive_monthly_stats(#{statMonth, mode=IN, jdbcType=VARCHAR})}
+    </select>
+
+    <update id="updateEmployeeNote" parameterType="map" statementType="CALLABLE">
+        {CALL sp_emp_update_note(
+            #{noteId, mode=IN, jdbcType=INTEGER},
+            #{newContent, mode=IN, jdbcType=LONGVARCHAR}
+        )}
+    </update>
+
+    <select id="adminGetAllNotes" resultType="map" statementType="CALLABLE">
+        {CALL sp_admin_get_all_notes()}
+    </select>
+
+    <update id="courseOffline" parameterType="map" statementType="CALLABLE">
+        {CALL sp_course_offline(#{courseId, mode=IN, jdbcType=INTEGER})}
+    </update>
+
+    <update id="autoSubmitExam" parameterType="map" statementType="CALLABLE">
+        {CALL auto_submit_exam(
+            #{examId, mode=IN, jdbcType=INTEGER},
+            #{userId, mode=IN, jdbcType=VARCHAR}
+        )}
+    </update>
+
+    <select id="examPassRate" parameterType="map" resultType="map" statementType="CALLABLE">
+        {CALL exam_pass_rate(#{examId, mode=IN, jdbcType=INTEGER})}
+    </select>
+</mapper>

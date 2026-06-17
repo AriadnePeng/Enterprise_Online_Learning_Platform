@@ -1,0 +1,18 @@
+services:
+  enterprise-learning:
+    build:
+      context: .
+      args:
+        VITE_API_BASE_URL: ""
+    image: enterprise-online-learning-platform:latest
+    container_name: enterprise-online-learning-platform
+    ports:
+      - "8081:8080"
+    environment:
+      API_TOKEN_SECRET: change-this-secret-in-production
+    volumes:
+      - enterprise-learning-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  enterprise-learning-data:

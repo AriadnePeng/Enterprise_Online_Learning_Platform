@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.learning.mapper.ViewMapper">
+    <select id="selectTaskProgressOverview" resultType="map">
+        SELECT * FROM `v_task_progress_overview`
+    </select>
+
+    <select id="selectDelayUserWarning" resultType="map">
+        SELECT * FROM `v_delay_user_warning`
+    </select>
+
+    <select id="selectAllStudentLearningExamStats" resultType="map">
+        SELECT * FROM `v_全体学员学习考试统计`
+    </select>
+
+    <select id="selectEmployeeAnomalyBehavior" resultType="map">
+        SELECT * FROM `v_employee_anomaly_behavior`
+    </select>
+
+    <select id="selectUserSafe" resultType="map">
+        SELECT * FROM `v_user_safe`
+    </select>
+
+    <select id="selectLecturerStudentNotes" resultType="map">
+        SELECT * FROM `v_lecturer_student_notes`
+    </select>
+
+    <select id="selectCourseCategoryStats" resultType="map">
+        SELECT * FROM `view_course_category_stats`
+    </select>
+
+    <select id="selectCourseListExtended" resultType="map">
+        SELECT * FROM `v_course_list_extended`
+    </select>
+
+    <select id="selectExamScoreSummary" resultType="map">
+        SELECT * FROM `vw_exam_score_summary`
+    </select>
+
+    <select id="selectAnswerSheetDetail" resultType="map">
+        SELECT * FROM `vw_answer_sheet_detail`
+    </select>
+</mapper>
